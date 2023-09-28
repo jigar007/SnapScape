@@ -19,6 +19,7 @@
 		019911B42AC43431007B81B2 /* SnapScapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911B32AC43431007B81B2 /* SnapScapeTests.swift */; };
 		019911BE2AC43431007B81B2 /* SnapScapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */; };
 		019911C02AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */; };
+		01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A00B082AC45C0E00694C9A /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		019911B92AC43431007B81B2 /* SnapScapeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapScapeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITests.swift; sourceTree = "<group>"; };
 		019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		01A00B082AC45C0E00694C9A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				0158877B2AC43BF90001F900 /* ListView.swift */,
 				0158877D2AC43C190001F900 /* LocationDetailView.swift */,
 				015887792AC43BDC0001F900 /* MapView.swift */,
+				01A00B082AC45C0E00694C9A /* LocationManager.swift */,
 				019911A42AC4342F007B81B2 /* Item.swift */,
 				019911A62AC43430007B81B2 /* Assets.xcassets */,
 				019911A82AC43430007B81B2 /* Preview Content */,
@@ -276,6 +279,7 @@
 				015887782AC4391C0001F900 /* HomeView.swift in Sources */,
 				0158877C2AC43BF90001F900 /* ListView.swift in Sources */,
 				0158877E2AC43C190001F900 /* LocationDetailView.swift in Sources */,
+				01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */,
 				0158877A2AC43BDC0001F900 /* MapView.swift in Sources */,
 				019911A52AC4342F007B81B2 /* Item.swift in Sources */,
 				019911A12AC4342F007B81B2 /* SnapScapeApp.swift in Sources */,
@@ -445,6 +449,7 @@
 				DEVELOPMENT_TEAM = U44NN2KVQD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show you nearest location spot";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -474,6 +479,7 @@
 				DEVELOPMENT_TEAM = U44NN2KVQD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show you nearest location spot";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

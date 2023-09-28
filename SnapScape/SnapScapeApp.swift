@@ -22,6 +22,9 @@ struct SnapScapeApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    // For now
+    private let locationManager = LocationManager()
 
     var body: some Scene {
         WindowGroup {
