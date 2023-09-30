@@ -9,15 +9,23 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        TabView {
-            MapView()
-                .tabItem {
-                    Label("Map", systemImage: "map")
+        NavigationStack {
+            TabView {
+                MapView()
+                    .tabItem {
+                        Label("Map", systemImage: "map")
+                    }
+                ListView()
+                    .tabItem {
+                        Label("List", systemImage: "list.bullet")
+                    }
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("SnapScape")
                 }
-            ListView()
-                .tabItem {
-                    Label("List", systemImage: "list.bullet")
-                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

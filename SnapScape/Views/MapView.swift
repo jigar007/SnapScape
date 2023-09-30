@@ -14,6 +14,9 @@ struct MapView: View {
     @State private var selectedMapItem: MKMapItem? = nil
     @State private var showingAlert = false
     @State private var locationName = ""
+    @State private var pinCoordinates: CLLocationCoordinate2D? = nil
+    @State private var goToLocationDetailScreen = false
+    @State private var addLocation = false
     
     private let locationViewModel = LocationViewModel()
     
@@ -22,38 +25,61 @@ struct MapView: View {
     }
     
     var body: some View {
-        VStack {
-            NavigationStack {
-                MapReader { reader in
-                    Map(position: $position, selection: $selectedMapItem) {
-                        UserAnnotation()
-                        ForEach(mkMapItems, id: \.self) { mapItem in
-                            Marker(item: mapItem)
-                        }
+        ZStack(alignment: .bottomTrailing) {
+            MapReader { reader in
+                Map(position: $position, selection: $selectedMapItem) {
+                    UserAnnotation()
+                    ForEach(mkMapItems, id: \.self) { mapItem in
+                        Marker(item: mapItem)
                     }
-                    .onChange(of: selectedMapItem) {
-                        showingAlert.toggle()
-                        if let locationTitle = selectedMapItem?.name {
-                            locationName = locationTitle
-                        }
-                    }
-                    .alert("Enter Title", isPresented: $showingAlert) {
-                        TextField("Enter Place Title", text: $locationName)
-                        Button("Cancel") {
-                            showingAlert.toggle()
-                        }
-                        Button("Save") {
-                            
-                        }
-                    }
-                    .mapStyle(.standard(elevation: .realistic))
-                    .mapControls {
-                        MapUserLocationButton()
-                        MapCompass()
-                        MapScaleView()
+                    if let pinCoordinates {
+                        Marker("NewItem", coordinate: pinCoordinates)
                     }
                 }
+                .onChange(of: selectedMapItem) {
+                    if !addLocation {
+                        goToLocationDetailScreen.toggle()
+                    }
+                }
+                .onTapGesture { screenCoord in
+                    if addLocation {
+                        pinCoordinates = reader.convert(screenCoord, from: .local)
+                        showingAlert.toggle()
+                    }
+                }
+                .alert("Enter Title", isPresented: $showingAlert) {
+                    TextField("Enter Place Title", text: $locationName)
+                    Button("Cancel") {
+                        showingAlert.toggle()
+                        pinCoordinates = nil
+                    }
+                    Button("Save") {
+                        
+                    }
+                }
+                .mapStyle(.standard(elevation: .realistic))
+                .mapControls {
+                    MapCompass()
+                        .containerRelativeFrame(.vertical, alignment: .bottom)
+                    MapUserLocationButton()
+                    MapScaleView()
+                }
             }
+            
+            Button {
+                addLocation.toggle()
+            } label: {
+                Label("Add Location", systemImage: addLocation ? "mappin" : "plus")
+                    .labelStyle(.iconOnly)
+            }
+            .padding()
+            .background(Color(uiColor: UIColor.systemBackground))
+            .cornerRadius(5)
+            .padding()
+            .padding(.bottom)
+        }
+        .navigationDestination(isPresented: $goToLocationDetailScreen) {
+            LocationDetailView()
         }
     }
 }

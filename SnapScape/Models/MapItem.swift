@@ -23,7 +23,9 @@ class MapItem {
     
     var mkMapItem: MKMapItem {
         let placeMark = MKPlacemark(coordinate: coordinates)
-        return MKMapItem(placemark: placeMark)
+        let mapItem = MKMapItem(placemark: placeMark)
+        mapItem.name = name
+        return mapItem
     }
     
     init(name: String, notes: String, latitude: Double, longitude: Double) {
