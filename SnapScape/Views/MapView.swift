@@ -11,7 +11,7 @@ import MapKit
 struct MapView: View {
     
     @State private var position: MapCameraPosition = .userLocation(followsHeading: true, fallback: .automatic)
-    @State private var selectedMapItem: MKMapItem? = nil
+    @State private var selectedMapItem: MapItem? = nil
     @State private var showingAlert = false
     @State private var locationName = ""
     @State private var pinCoordinates: CLLocationCoordinate2D? = nil
@@ -19,18 +19,15 @@ struct MapView: View {
     @State private var addLocation = false
     
     private let locationViewModel = LocationViewModel()
-    
-    public var mkMapItems: [MKMapItem] {
-        locationViewModel.mapItems.map { $0.mkMapItem }
-    }
-    
+        
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             MapReader { reader in
                 Map(position: $position, selection: $selectedMapItem) {
                     UserAnnotation()
-                    ForEach(mkMapItems, id: \.self) { mapItem in
-                        Marker(item: mapItem)
+                    ForEach(locationViewModel.mapItems, id: \.self) { mapItem in
+                        Marker(item: mapItem.mkMapItem)
+                            .tag(mapItem)
                     }
                     if let pinCoordinates {
                         Marker("NewItem", coordinate: pinCoordinates)
@@ -57,15 +54,14 @@ struct MapView: View {
                         
                     }
                 }
-                .mapStyle(.standard(elevation: .realistic))
                 .mapControls {
                     MapCompass()
-                        .containerRelativeFrame(.vertical, alignment: .bottom)
+                    MapPitchToggle()
                     MapUserLocationButton()
                     MapScaleView()
                 }
+                .mapStyle(.standard(elevation: .realistic))
             }
-            
             Button {
                 addLocation.toggle()
             } label: {
@@ -79,7 +75,12 @@ struct MapView: View {
             .padding(.bottom)
         }
         .navigationDestination(isPresented: $goToLocationDetailScreen) {
-            LocationDetailView()
+            if let selectedMapItem {
+                LocationDetailView(mapItem: selectedMapItem)
+                    .onDisappear {
+                        print("hello")
+                    }
+            }
         }
     }
 }

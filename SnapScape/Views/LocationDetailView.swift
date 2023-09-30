@@ -6,18 +6,56 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LocationDetailView: View {
+    
+    var mapItem: MapItem
+    
+    @State private var notes: String = ""
+    
+    private var mapCameraPosition: MapCameraPosition {
+        .camera(MapCamera(centerCoordinate: mapItem.coordinates,
+                          distance: 1000,
+                          heading: 270,
+                          pitch: 70))
+    }
+    
     var body: some View {
-        Text("Hello, World!")
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Primary View")
-                }
+        VStack {
+            Map(position: .constant(mapCameraPosition)) {
+                Marker(item: mapItem.mkMapItem)
             }
+            .frame(height: 300)
+            .mapStyle(.standard(elevation: .realistic))
+            
+            VStack(alignment: .leading) {
+                Label("Notes", systemImage: "list.clipboard")
+                    .padding(.bottom)
+                VStack {
+                    TextEditor(text: $notes)
+                        .frame(height: 100)
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.accentColor, lineWidth: 1)
+                )
+            }
+            .padding()
+            Spacer()
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(mapItem.name)
+            }
+        }
     }
 }
 
 #Preview {
-    LocationDetailView()
+    let mapItem = MapItem(name: "Milsons Point",
+                          notes: "",
+                          latitude: -33.85075,
+                          longitude: 151.212519)
+    return LocationDetailView(mapItem: mapItem)
 }
