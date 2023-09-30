@@ -10,9 +10,9 @@ import SwiftData
 
 @main
 struct SnapScapeApp: App {
-    var sharedModelContainer: ModelContainer = {
+    private var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            MapItem.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -23,7 +23,6 @@ struct SnapScapeApp: App {
         }
     }()
     
-    // For now
     private let locationManager = LocationManager()
 
     var body: some Scene {
