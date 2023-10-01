@@ -6,13 +6,56 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ListView: View {
+    
+    let locationViewModel: LocationViewModel
+    let locationManager: LocationManager
+
+    private let distanceCalculator = DistanceCalculator()
+    
+    @State private var selectedMapItem: MapItem?
+    
     var body: some View {
-        Text("List")
+        ZStack {
+            switch distanceCalculator.mapItemsWithDistance {
+            case .calculationInProgress:
+                ProgressView()
+            case .userLocationIsNoAvailable:
+                Label("User location is not available", systemImage: "location")
+            case.mapItems(let mapItemsWithDistance):
+                List(selection: $selectedMapItem) {
+                    HStack {
+                        Text("Location")
+                        Spacer()
+                        Text("Nearest")
+                    }
+                    .bold()
+                    ForEach(mapItemsWithDistance) { mapItem in
+                        HStack {
+                            Text(mapItem.name)
+                            Spacer()
+                            Text(String(format: "%.2f KM", mapItem.distance.inKiloMeters))
+                            Image(systemName: "chevron.right")
+                        }
+                        .tag(mapItem)
+                        .padding(.vertical, 5)
+                    }
+                }
+                .navigationDestination(item: $selectedMapItem) {
+                    LocationDetailView(mapItem: $0)
+                }
+            }
+        }
+        .task {
+            await distanceCalculator.getDistanceInAscendingOrder(userLocation: locationManager.userLocation,
+                                                                 mapItems: locationViewModel.mapItems)
+        }
     }
 }
 
 #Preview {
-    ListView()
+    ListView(locationViewModel: LocationViewModel(),
+             locationManager: LocationManager())
 }

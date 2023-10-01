@@ -18,7 +18,7 @@ struct MapView: View {
     @State private var goToLocationDetailScreen = false
     @State private var addLocation = false
     
-    private let locationViewModel = LocationViewModel()
+    var locationViewModel: LocationViewModel
         
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -86,5 +86,5 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView()
+    MapView(locationViewModel: LocationViewModel())
 }

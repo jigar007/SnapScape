@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    private let locationViewModel = LocationViewModel()
+    private let locationManager = LocationManager()
+
     var body: some View {
         NavigationStack {
             TabView {
-                MapView()
+                MapView(locationViewModel: locationViewModel)
                     .tabItem {
                         Label("Map", systemImage: "map")
                     }
-                ListView()
+                ListView(locationViewModel: locationViewModel,
+                         locationManager: locationManager)
                     .tabItem {
                         Label("List", systemImage: "list.bullet")
                     }

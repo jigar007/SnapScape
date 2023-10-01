@@ -15,6 +15,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     override init() {
         super.init()
+        userLocation = locationManager.location
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         if locationManager.authorizationStatus == .notDetermined {

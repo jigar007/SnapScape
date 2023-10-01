@@ -17,6 +17,8 @@ class MapItem {
     var latitude: Double
     var longitude: Double
     
+    var distance: Double = 0
+    
     var coordinates: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
@@ -33,5 +35,10 @@ class MapItem {
         self.notes = notes
         self.latitude = latitude
         self.longitude = longitude
+    }
+    
+    func setDistance(_ distance: Double) -> MapItem {
+        self.distance = distance
+        return self
     }
 }

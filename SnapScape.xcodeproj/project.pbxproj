@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010C73A22AC94EC100DC0C3F /* Sequence+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C73A12AC94EC100DC0C3F /* Sequence+Async.swift */; };
+		010C73A52AC94EEA00DC0C3F /* Array+ShortByDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C73A42AC94EEA00DC0C3F /* Array+ShortByDistance.swift */; };
+		010C73A72AC94F0E00DC0C3F /* Double+InKilometers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C73A62AC94F0E00DC0C3F /* Double+InKilometers.swift */; };
 		011D40AD2AC7067D00609563 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D40AC2AC7067D00609563 /* LocationViewModel.swift */; };
 		011D40AF2AC706A200609563 /* MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D40AE2AC706A200609563 /* MapItem.swift */; };
 		011D40B12AC706E300609563 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D40B02AC706E300609563 /* APIManager.swift */; };
@@ -26,6 +29,7 @@
 		019911BE2AC43431007B81B2 /* SnapScapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */; };
 		019911C02AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */; };
 		01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A00B082AC45C0E00694C9A /* LocationManager.swift */; };
+		01B7835B2AC7FE1F00F9F1AD /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010C73A12AC94EC100DC0C3F /* Sequence+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Async.swift"; sourceTree = "<group>"; };
+		010C73A42AC94EEA00DC0C3F /* Array+ShortByDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ShortByDistance.swift"; sourceTree = "<group>"; };
+		010C73A62AC94F0E00DC0C3F /* Double+InKilometers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+InKilometers.swift"; sourceTree = "<group>"; };
 		011D40AC2AC7067D00609563 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		011D40AE2AC706A200609563 /* MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItem.swift; sourceTree = "<group>"; };
 		011D40B02AC706E300609563 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -68,6 +75,8 @@
 		019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITests.swift; sourceTree = "<group>"; };
 		019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		01A00B082AC45C0E00694C9A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
+		01B7835C2AC904BC00F9F1AD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +104,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010C73A32AC94EC600DC0C3F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				010C73A12AC94EC100DC0C3F /* Sequence+Async.swift */,
+				010C73A42AC94EEA00DC0C3F /* Array+ShortByDistance.swift */,
+				010C73A62AC94F0E00DC0C3F /* Double+InKilometers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		011D40BA2AC7089800609563 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */,
 				011D40B82AC7088600609563 /* Logger.swift */,
 				011D40B42AC7072000609563 /* Constants.swift */,
-				01A00B082AC45C0E00694C9A /* LocationManager.swift */,
 				011D40BC2AC708DD00609563 /* NetworkError.swift */,
 				019911A62AC43430007B81B2 /* Assets.xcassets */,
 				019911A82AC43430007B81B2 /* Preview Content */,
@@ -134,6 +153,7 @@
 			children = (
 				011D40B62AC7076200609563 /* DatabaseManager.swift */,
 				011D40B02AC706E300609563 /* APIManager.swift */,
+				01A00B082AC45C0E00694C9A /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -149,6 +169,7 @@
 		019911942AC4342F007B81B2 = {
 			isa = PBXGroup;
 			children = (
+				01B7835C2AC904BC00F9F1AD /* MyPlayground.playground */,
 				0199119F2AC4342F007B81B2 /* SnapScape */,
 				019911B22AC43431007B81B2 /* SnapScapeTests */,
 				019911BC2AC43431007B81B2 /* SnapScapeUITests */,
@@ -174,6 +195,7 @@
 				011D40C12AC7092200609563 /* ViewModels */,
 				011D40C02AC7091A00609563 /* Managers */,
 				011D40BA2AC7089800609563 /* Helpers */,
+				010C73A32AC94EC600DC0C3F /* Extensions */,
 			);
 			path = SnapScape;
 			sourceTree = "<group>";
@@ -219,6 +241,8 @@
 			dependencies = (
 			);
 			name = SnapScape;
+			packageProductDependencies = (
+			);
 			productName = SnapScape;
 			productReference = 0199119D2AC4342F007B81B2 /* SnapScape.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +315,8 @@
 				Base,
 			);
 			mainGroup = 019911942AC4342F007B81B2;
+			packageReferences = (
+			);
 			productRefGroup = 0199119E2AC4342F007B81B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,15 +359,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B7835B2AC7FE1F00F9F1AD /* DistanceCalculator.swift in Sources */,
+				010C73A22AC94EC100DC0C3F /* Sequence+Async.swift in Sources */,
 				015887782AC4391C0001F900 /* HomeView.swift in Sources */,
 				011D40B52AC7072000609563 /* Constants.swift in Sources */,
 				0158877C2AC43BF90001F900 /* ListView.swift in Sources */,
+				010C73A52AC94EEA00DC0C3F /* Array+ShortByDistance.swift in Sources */,
 				011D40B12AC706E300609563 /* APIManager.swift in Sources */,
 				0158877E2AC43C190001F900 /* LocationDetailView.swift in Sources */,
 				01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */,
 				0158877A2AC43BDC0001F900 /* MapView.swift in Sources */,
 				011D40C32AC7B14900609563 /* APIResponse.swift in Sources */,
 				011D40B92AC7088600609563 /* Logger.swift in Sources */,
+				010C73A72AC94F0E00DC0C3F /* Double+InKilometers.swift in Sources */,
 				011D40B72AC7076200609563 /* DatabaseManager.swift in Sources */,
 				019911A12AC4342F007B81B2 /* SnapScapeApp.swift in Sources */,
 				011D40BD2AC708DD00609563 /* NetworkError.swift in Sources */,

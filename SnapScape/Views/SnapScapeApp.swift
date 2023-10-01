@@ -23,8 +23,6 @@ struct SnapScapeApp: App {
         }
     }()
     
-    private let locationManager = LocationManager()
-
     var body: some Scene {
         WindowGroup {
             HomeView()
