@@ -23,12 +23,30 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>SnapScape.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0199119C2AC4342F007B81B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>019911AE2AC43431007B81B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>019911B82AC43431007B81B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

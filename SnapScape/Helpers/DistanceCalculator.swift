@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-enum MapItemWithDistance {
+enum MapItemWithDistance: Equatable {
     case mapItems([MapItem])
     case calculationInProgress
     case userLocationIsNoAvailable

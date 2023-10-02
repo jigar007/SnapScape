@@ -25,10 +25,12 @@
 		019911A12AC4342F007B81B2 /* SnapScapeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911A02AC4342F007B81B2 /* SnapScapeApp.swift */; };
 		019911A72AC43430007B81B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019911A62AC43430007B81B2 /* Assets.xcassets */; };
 		019911AA2AC43430007B81B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019911A92AC43430007B81B2 /* Preview Assets.xcassets */; };
-		019911B42AC43431007B81B2 /* SnapScapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911B32AC43431007B81B2 /* SnapScapeTests.swift */; };
+		019911B42AC43431007B81B2 /* LocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911B32AC43431007B81B2 /* LocationViewModelTests.swift */; };
 		019911BE2AC43431007B81B2 /* SnapScapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */; };
 		019911C02AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */; };
 		01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A00B082AC45C0E00694C9A /* LocationManager.swift */; };
+		01A0C0FD2ACABD3E00689DC5 /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A0C0FC2ACABD3E00689DC5 /* MockAPIManager.swift */; };
+		01A0C11A2ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A0C1192ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift */; };
 		01A4A9F12ACAB957000B99C9 /* LocalCacheForMapItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4A9F02ACAB957000B99C9 /* LocalCacheForMapItems.swift */; };
 		01B7835B2AC7FE1F00F9F1AD /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -71,11 +73,13 @@
 		019911A62AC43430007B81B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019911A92AC43430007B81B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		019911AF2AC43431007B81B2 /* SnapScapeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapScapeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		019911B32AC43431007B81B2 /* SnapScapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeTests.swift; sourceTree = "<group>"; };
+		019911B32AC43431007B81B2 /* LocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModelTests.swift; sourceTree = "<group>"; };
 		019911B92AC43431007B81B2 /* SnapScapeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapScapeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITests.swift; sourceTree = "<group>"; };
 		019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		01A00B082AC45C0E00694C9A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		01A0C0FC2ACABD3E00689DC5 /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
+		01A0C1192ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMockDatabaseManager.swift; sourceTree = "<group>"; };
 		01A4A9F02ACAB957000B99C9 /* LocalCacheForMapItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheForMapItems.swift; sourceTree = "<group>"; };
 		01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 		01B7835C2AC904BC00F9F1AD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -214,7 +218,9 @@
 		019911B22AC43431007B81B2 /* SnapScapeTests */ = {
 			isa = PBXGroup;
 			children = (
-				019911B32AC43431007B81B2 /* SnapScapeTests.swift */,
+				019911B32AC43431007B81B2 /* LocationViewModelTests.swift */,
+				01A0C1192ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift */,
+				01A0C0FC2ACABD3E00689DC5 /* MockAPIManager.swift */,
 			);
 			path = SnapScapeTests;
 			sourceTree = "<group>";
@@ -388,7 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				019911B42AC43431007B81B2 /* SnapScapeTests.swift in Sources */,
+				01A0C0FD2ACABD3E00689DC5 /* MockAPIManager.swift in Sources */,
+				019911B42AC43431007B81B2 /* LocationViewModelTests.swift in Sources */,
+				01A0C11A2ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
