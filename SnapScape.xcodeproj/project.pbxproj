@@ -31,6 +31,8 @@
 		01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A00B082AC45C0E00694C9A /* LocationManager.swift */; };
 		01A0C0FD2ACABD3E00689DC5 /* MockAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A0C0FC2ACABD3E00689DC5 /* MockAPIManager.swift */; };
 		01A0C11A2ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A0C1192ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift */; };
+		01A0C11E2ACAD39000689DC5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 01A0C11D2ACAD39000689DC5 /* README.md */; };
+		01A0C1202ACAD55000689DC5 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01A0C11F2ACAD55000689DC5 /* Location.gpx */; };
 		01A4A9F12ACAB957000B99C9 /* LocalCacheForMapItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4A9F02ACAB957000B99C9 /* LocalCacheForMapItems.swift */; };
 		01B7835B2AC7FE1F00F9F1AD /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		01A00B082AC45C0E00694C9A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		01A0C0FC2ACABD3E00689DC5 /* MockAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIManager.swift; sourceTree = "<group>"; };
 		01A0C1192ACACD9A00689DC5 /* EmptyMockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMockDatabaseManager.swift; sourceTree = "<group>"; };
+		01A0C11D2ACAD39000689DC5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		01A0C11F2ACAD55000689DC5 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		01A4A9F02ACAB957000B99C9 /* LocalCacheForMapItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheForMapItems.swift; sourceTree = "<group>"; };
 		01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 		01B7835C2AC904BC00F9F1AD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -176,6 +180,8 @@
 		019911942AC4342F007B81B2 = {
 			isa = PBXGroup;
 			children = (
+				01A0C11D2ACAD39000689DC5 /* README.md */,
+				01A0C11F2ACAD55000689DC5 /* Location.gpx */,
 				01B7835C2AC904BC00F9F1AD /* MyPlayground.playground */,
 				0199119F2AC4342F007B81B2 /* SnapScape */,
 				019911B22AC43431007B81B2 /* SnapScapeTests */,
@@ -351,6 +357,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A0C1202ACAD55000689DC5 /* Location.gpx in Resources */,
+				01A0C11E2ACAD39000689DC5 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
