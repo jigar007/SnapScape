@@ -10,9 +10,9 @@ import MapKit
 
 struct ListView: View {
     
-    let locationViewModel: LocationViewModel
-    let locationManager: LocationManager
-
+    public var locationViewModel: LocationViewModel
+    public let locationManager: LocationManager
+    
     private let distanceCalculator = DistanceCalculator()
     
     @State private var selectedMapItem: MapItem?
@@ -44,13 +44,17 @@ struct ListView: View {
                     }
                 }
                 .navigationDestination(item: $selectedMapItem) {
-                    LocationDetailView(mapItem: $0)
+                    LocationDetailView(mapItem: $0, saveNotes: {
+                        locationViewModel.saveNotes()
+                    })
                 }
             }
         }
-        .task {
-            await distanceCalculator.getDistanceInAscendingOrder(userLocation: locationManager.userLocation,
-                                                                 mapItems: locationViewModel.mapItems)
+        .onAppear {
+            Task {
+                await distanceCalculator.getDistanceInAscendingOrder(userLocation: locationManager.userLocation,
+                                                                     mapItems: locationViewModel.mapItems)
+            }
         }
     }
 }

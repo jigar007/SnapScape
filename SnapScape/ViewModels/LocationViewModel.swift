@@ -11,12 +11,12 @@ import OSLog
 @Observable
 class LocationViewModel {
     
-    public var mapItems = [MapItem]()
+    private(set) var mapItems = [MapItem]()
     
     private let databaseProvider: DatabaseProvider
     
     init(remoteLocationProvider: RemoteLocationProvider = APIManager(),
-         databaseProvider: DatabaseProvider = DatabaseManager()) {
+         databaseProvider: DatabaseProvider = DatabaseManager.shared) {
         self.databaseProvider = databaseProvider
         fetchRemoteLocations(remoteLocationProvider)
         fetchDataBaseLocations()
@@ -43,6 +43,23 @@ class LocationViewModel {
         do {
             let mapItemsFromDatabase = try databaseProvider.fetchMapItems()
             mapItems.append(contentsOf: mapItemsFromDatabase)
+        } catch {
+            Logger.runTimeError.critical("\(error.localizedDescription)")
+        }
+    }
+    
+    public func addMapItem(mapItem: MapItem) {
+        do {
+            mapItems.append(mapItem)
+            try databaseProvider.addMapItem(mapItem)
+        } catch {
+            Logger.runTimeError.critical("\(error.localizedDescription)")
+        }
+    }
+    
+    public func saveNotes() {
+        do {
+            try databaseProvider.saveData()
         } catch {
             Logger.runTimeError.critical("\(error.localizedDescription)")
         }

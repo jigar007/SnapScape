@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     
-    private let locationViewModel = LocationViewModel()
+    @State private var locationViewModel = LocationViewModel()
     private let locationManager = LocationManager()
-
+    
     var body: some View {
         NavigationStack {
             TabView {
@@ -21,9 +21,9 @@ struct HomeView: View {
                     }
                 ListView(locationViewModel: locationViewModel,
                          locationManager: locationManager)
-                    .tabItem {
-                        Label("List", systemImage: "list.bullet")
-                    }
+                .tabItem {
+                    Label("List", systemImage: "list.bullet")
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {

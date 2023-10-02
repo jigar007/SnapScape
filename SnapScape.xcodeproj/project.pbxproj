@@ -29,6 +29,7 @@
 		019911BE2AC43431007B81B2 /* SnapScapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */; };
 		019911C02AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */; };
 		01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A00B082AC45C0E00694C9A /* LocationManager.swift */; };
+		01A4A9F12ACAB957000B99C9 /* LocalCacheForMapItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4A9F02ACAB957000B99C9 /* LocalCacheForMapItems.swift */; };
 		01B7835B2AC7FE1F00F9F1AD /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		019911BD2AC43431007B81B2 /* SnapScapeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITests.swift; sourceTree = "<group>"; };
 		019911BF2AC43431007B81B2 /* SnapScapeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScapeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		01A00B082AC45C0E00694C9A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		01A4A9F02ACAB957000B99C9 /* LocalCacheForMapItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheForMapItems.swift; sourceTree = "<group>"; };
 		01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 		01B7835C2AC904BC00F9F1AD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				01B7835A2AC7FE1F00F9F1AD /* DistanceCalculator.swift */,
+				01A4A9F02ACAB957000B99C9 /* LocalCacheForMapItems.swift */,
 				011D40B82AC7088600609563 /* Logger.swift */,
 				011D40B42AC7072000609563 /* Constants.swift */,
 				011D40BC2AC708DD00609563 /* NetworkError.swift */,
@@ -368,6 +371,7 @@
 				011D40B12AC706E300609563 /* APIManager.swift in Sources */,
 				0158877E2AC43C190001F900 /* LocationDetailView.swift in Sources */,
 				01A00B092AC45C0E00694C9A /* LocationManager.swift in Sources */,
+				01A4A9F12ACAB957000B99C9 /* LocalCacheForMapItems.swift in Sources */,
 				0158877A2AC43BDC0001F900 /* MapView.swift in Sources */,
 				011D40C32AC7B14900609563 /* APIResponse.swift in Sources */,
 				011D40B92AC7088600609563 /* Logger.swift in Sources */,

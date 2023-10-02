@@ -10,7 +10,8 @@ import MapKit
 
 struct LocationDetailView: View {
     
-    var mapItem: MapItem
+    public var mapItem: MapItem
+    public var saveNotes: () -> Void
     
     @State private var notes: String = ""
     
@@ -28,10 +29,15 @@ struct LocationDetailView: View {
             }
             .frame(height: 300)
             .mapStyle(.standard(elevation: .realistic))
-            
             VStack(alignment: .leading) {
-                Label("Notes", systemImage: "list.clipboard")
-                    .padding(.bottom)
+                HStack {
+                    Label("Notes", systemImage: "list.clipboard")
+                        .padding(.bottom)
+                    Button("Save") {
+                        mapItem.notes = notes
+                        saveNotes()
+                    }
+                }
                 VStack {
                     TextEditor(text: $notes)
                         .frame(height: 100)
@@ -43,6 +49,9 @@ struct LocationDetailView: View {
             }
             .padding()
             Spacer()
+        }
+        .onAppear {
+            notes = mapItem.notes
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -57,5 +66,5 @@ struct LocationDetailView: View {
                           notes: "",
                           latitude: -33.85075,
                           longitude: 151.212519)
-    return LocationDetailView(mapItem: mapItem)
+    return LocationDetailView(mapItem: mapItem, saveNotes: {})
 }

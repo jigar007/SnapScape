@@ -10,7 +10,9 @@ import CoreLocation
 import MapKit
 
 @Model
-class MapItem {
+class MapItem: Identifiable {
+    var id: UUID
+    
     var name: String
     var notes: String
     
@@ -30,11 +32,16 @@ class MapItem {
         return mapItem
     }
     
-    init(name: String, notes: String, latitude: Double, longitude: Double) {
+    init(id: UUID = UUID(), name: String, notes: String, latitude: Double, longitude: Double) {
+        self.id = id
         self.name = name
         self.notes = notes
         self.latitude = latitude
         self.longitude = longitude
+    }
+    
+    convenience init(id: UUID = UUID(), name: String, notes: String, coordinates: CLLocationCoordinate2D) {
+        self.init(id: id, name: name, notes: notes, latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
     
     func setDistance(_ distance: Double) -> MapItem {
