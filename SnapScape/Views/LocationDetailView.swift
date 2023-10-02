@@ -30,13 +30,18 @@ struct LocationDetailView: View {
             .frame(height: 300)
             .mapStyle(.standard(elevation: .realistic))
             VStack(alignment: .leading) {
-                HStack {
+                HStack(alignment: .top) {
                     Label("Notes", systemImage: "list.clipboard")
                         .padding(.bottom)
+                    Spacer()
                     Button("Save") {
                         mapItem.notes = notes
                         saveNotes()
                     }
+                    .padding(6)
+                    .background(Color(uiColor: .systemBlue))
+                    .cornerRadius(3.0)
+                    .foregroundColor(.white)
                 }
                 VStack {
                     TextEditor(text: $notes)
